@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 env:
@@ -11,6 +11,11 @@ env:
 jobs:
   run-ci:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: contract
+
     steps:
       - uses: actions/checkout@v2
 
@@ -21,6 +26,9 @@ jobs:
 
       - name: Install deps
         run: forge install
+
+      - name: generating  gas snapshots
+        run: forge snapshot
 
       - name: Check gas snapshots
         run: forge snapshot --check
