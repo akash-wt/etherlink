@@ -1,6 +1,6 @@
 import { http, createConfig } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
-import {  injected  } from 'wagmi/connectors'
+import { injected } from 'wagmi/connectors'
 
 export const config = createConfig({
   chains: [mainnet, sepolia],
@@ -8,8 +8,8 @@ export const config = createConfig({
     injected(),
   ],
   transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
+    [mainnet.id]: http("https://eth-mainnet.g.alchemy.com/v2/-HbMyyXskgweOHG97L3XM2Xx2zObO-Bz"),
+    [sepolia.id]: http("https://eth-sepolia.g.alchemy.com/v2/-HbMyyXskgweOHG97L3XM2Xx2zObO-Bz"),
   },
 })
 

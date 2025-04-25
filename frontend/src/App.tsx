@@ -1,4 +1,7 @@
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import TotalSupply from './TotalSupply'
+import { AllowUSDT } from './AllowUSDT'
+
 
 function App() {
   const account = useAccount()
@@ -39,8 +42,17 @@ function App() {
         <div>{status}</div>
         <div>{error?.message}</div>
       </div>
+
+      <div>
+        Total supply :
+        <TotalSupply />
+        <AllowUSDT />
+      </div>
+
     </>
   )
 }
+
+
 
 export default App
