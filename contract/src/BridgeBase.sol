@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.13;
 
-import {IERC20} from "openzeppelin-contracts/token/ERC20/IERC20.sol";
-import {Ownable} from "openzeppelin-contracts/access/Ownable.sol";
+import {IERC20} from "openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
+import {Ownable} from "openzeppelin-contracts/contracts/access/Ownable.sol";
 
 interface IBGLD is IERC20 {
     function mint(address _to, uint256 _amount) external;
